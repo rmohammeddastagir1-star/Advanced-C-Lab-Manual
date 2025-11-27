@@ -15,13 +15,38 @@ Else
 6.	Return 0
  
 Program:
+```
+"#include<stdio.h> struct eligib
+{
+int age; char n[4];
+};
+int main()
+{
+struct eligib e; scanf("%d%s",&e.age,e.n);
+if(e.age<=6)
+{
+printf("Age:%d\nName:%svaccine:%d\neligibility:no",e.age,e.n,e.age);
+}
+ 
+else
+{
+printf("Age:%d\nName:%svaccine:%d\neligibility:yes",e.age,e.n,e.age);
+}
+ 
 
-//type your code here
+ 
+
+}"
+```
+
+
 
 
 Output:
 
-//paste your output here
+
+![exp 1 ](https://github.com/user-attachments/assets/4c8f3215-deec-49c8-96ae-869e32df23b5)
+
 
 
 Result:
@@ -30,6 +55,7 @@ Thus, the program is verified successfully.
 
 
 EXP NO:2 C PROGRAM FOR PASSING STRUCTURES AS FUNCTION ARGUMENTS AND RETURNING A STRUCTURE FROM A FUNCTION
+ 
 Aim:
 To write a C program for passing structure as function and returning a structure from a function
 
@@ -43,8 +69,25 @@ Algorithm:
 7.	Return 0
  
 Program:
+```#include<stdio.h> struct numbers
+{
+int a; int b;
+}n;
+int add(struct numbers n); int main()
+{
 
-//type your code here
+scanf("%d %d ",&n.a,&n.b);
+printf("%d",add(n));
+}
+int add(struct numbers n)
+{
+return n.a+n.b;
+}
+```
+
+
+
+
 
 
 
@@ -52,7 +95,8 @@ Program:
 Output:
 
 
-//paste your output here
+![exp 1 2](https://github.com/user-attachments/assets/ef73d191-1382-4b11-8197-30565f20177d)
+
 
 
 
@@ -85,8 +129,16 @@ Use scanf to input the file name into the name array.
 5.	Return 0 to indicate successful program execution.
  
 Program:
+```#include <stdio.h> int main()
+{
+FILE *p;
+char name[30]; scanf("%s",name);
+printf("%s File Created Successfully",name); p=fopen("name","w");
+printf("\n%s File Opened",name); fclose(p);
+printf("\n%s File Closed",name);
+}
+```
 
-//type your code here
 
 
 
@@ -94,7 +146,8 @@ Program:
 Output:
 
 
-//paste your output here
+![exp 1 3](https://github.com/user-attachments/assets/46a3705f-3612-402e-b703-2548e8e64bc6)
+
 
 
 
@@ -112,6 +165,7 @@ Thus, the program is verified successfully
 
 
 EXP NO:4   PROGRAM TO READ A FILE NAME FROM USER, WRITE THAT FILE AND INSERT TEXT IN TO THAT FILE
+
 Aim:
 To write a C program to read, a file and insert text in that file
 Algorithm:
@@ -133,7 +187,24 @@ Use scanf to input the file name into the name array and the number of strings i
  
 Program:
 
-//type your code here
+```#include <stdio.h> 
+int main()
+{
+FILE *p;
+char name[20]; 
+int num;
+char text[50]; 
+scanf("%s%d",name,&num); 
+p=fopen("name","w"); 
+printf("%s Opened",name); 
+for(int i=0;i<num;i++)
+{
+scanf("%s",text); 
+fputs(text,p);
+}
+printf("\nData added Successfully");
+}
+```
 
 
 
@@ -141,7 +212,9 @@ Program:
 Output:
 
 
-//paste your output here
+
+![exp 1 4](https://github.com/user-attachments/assets/c559dd00-2dac-415e-a5dc-18d6e4433b13)
+
 
 
 
@@ -186,8 +259,37 @@ Algorithm:
 13.End the program by returning 0.
 
 Program:
-
-//type your code here
+```
+#include <stdio.h>
+#include <stdlib.h>
+struct Subject
+{
+    char name[20];
+    int marks;
+};
+int main()
+{
+    int i,n;
+    scanf("%d",&n);
+    struct Subject *s = (struct Subject *)malloc(n*sizeof(struct Subject));
+    if(s==NULL)
+    {
+        printf("Memory Alocation Failed\n");
+        return 1;
+    }
+    for(i=0;i<n;i++)
+    {
+        scanf("%s %d",s[i].name,&s[i].marks);
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("%s  %d\n",s[i].name,s[i].marks);
+    }
+    
+   free(s);
+   return 0;
+}
+```
 
 
 
@@ -195,7 +297,8 @@ Program:
 Output:
 
 
-//paste your output here
+
+![image](https://github.com/user-attachments/assets/a15bb82a-012a-4b87-b1ac-f728a62be29f)
 
 
 
